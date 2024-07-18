@@ -1,0 +1,76 @@
+//
+// Component: Brand
+//
+
+.brand-link {
+  @include font-size($navbar-brand-font-size);
+  @include transition(width $transition-speed $transition-fn);
+  $brand-link-padding-y: $navbar-brand-padding-y + $navbar-padding-y;
+  display: block;
+  padding: $brand-link-padding-y $sidebar-padding-x;
+  line-height: $line-height-lg;
+  white-space: nowrap;
+
+  &:hover {
+    color: $white;
+    text-decoration: none;
+  }
+
+  .text-sm & {
+    font-size: inherit;
+  }
+
+  [class*="sidebar-dark"] & {
+    color: rgba($white, .8);
+    border-bottom: 1px solid lighten($dark, 10%);
+  }
+
+  [class*="sidebar-light"] & {
+    color: rgba($black, .8);
+    border-bottom: 1px solid $gray-300;
+  }
+
+  .brand-image {
+    float: left;
+    width: auto;
+    max-height: 33px;
+    margin-top: -3px;
+    margin-right: .5rem;
+    margin-left: .8rem;
+    line-height: .8;
+  }
+
+  .brand-image-xs {
+    float: left;
+    width: auto;
+    max-height: 33px;
+    margin-top: -.1rem;
+    line-height: .8;
+  }
+
+  .brand-image-xl {
+    width: auto;
+    max-height: 40px;
+    line-height: .8;
+  }
+
+  &.text-sm,
+  .text-sm & {
+    .brand-image {
+      height: 29px;
+      margin-top: -.25rem;
+      margin-bottom: -.25rem;
+      margin-left: .95rem;
+    }
+
+    .brand-image-xs {
+      max-height: 29px;
+      margin-top: -.2rem;
+    }
+
+    .brand-image-xl {
+      max-height: 38px;
+      margin-top: -.225rem;
+    }
+  }
+}

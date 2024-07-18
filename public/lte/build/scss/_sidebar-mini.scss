@@ -1,0 +1,139 @@
+//
+// Component: Sidebar Mini
+//
+
+// Logo style
+.logo-xs,
+.logo-xl {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
+
+  &.brand-image-xs {
+    top: 12px;
+    left: 18px;
+  }
+
+  &.brand-image-xl {
+    top: 6px;
+    left: 12px;
+  }
+}
+
+.logo-xs {
+  visibility: hidden;
+  opacity: 0;
+
+  &.brand-image-xl {
+    top: 8px;
+    left: 16px;
+  }
+}
+
+.brand-link {
+  &.logo-switch {
+    &::before {
+      content: "\00a0";
+    }
+  }
+}
+
+// Add sidebar-mini class to the body tag to activate this feature
+.sidebar-mini {
+  @include media-breakpoint-up(lg) {
+    @include sidebar-mini-breakpoint;
+  }
+}
+
+.sidebar-mini-md {
+  @include media-breakpoint-up(md) {
+    @include sidebar-mini-breakpoint;
+  }
+}
+
+.sidebar-collapse {
+  .sidebar-no-expand.main-sidebar.sidebar-focused,
+  .sidebar-no-expand.main-sidebar:hover {
+    width: $sidebar-mini-width;
+
+    .brand-link {
+      width: $sidebar-mini-width !important;
+    }
+
+    .user-panel .image {
+      float: none !important;
+    }
+
+    .logo-xs {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .logo-xl {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .nav-sidebar.nav-child-indent .nav-treeview {
+      padding-left: 0;
+    }
+
+    .brand-text,
+    .user-panel > .info,
+    .nav-sidebar .nav-link p {
+      width: 0;
+      margin-left: -10px;
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    .nav-sidebar > .nav-item .nav-icon {
+      margin-right: 0;
+    }
+
+    .nav-flat {
+      .nav-icon {
+        margin-left: .5rem;
+      }
+
+      .nav-treeview {
+        .nav-icon {
+          margin-left: .3rem;
+        }
+      }
+    }
+  }
+}
+
+.nav-sidebar {
+  position: relative;
+
+  &:hover {
+    overflow: visible;
+  }
+}
+
+.sidebar-form,
+.nav-sidebar > .nav-header {
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.nav-sidebar .nav-item > .nav-link {
+  position: relative;
+
+  > .float-right {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -7px;
+  }
+}
+
+.sidebar .nav-link p,
+.main-sidebar .brand-text,
+.main-sidebar .logo-xs,
+.main-sidebar .logo-xl,
+.sidebar .user-panel .info {
+  @include transition(margin-left $transition-speed linear, opacity $transition-speed ease, visibility $transition-speed ease);
+}

@@ -1,0 +1,37 @@
+//
+// Pages: Profile
+//
+
+.profile-user-img {
+  width: 100px;
+  padding: 3px;
+  margin: 0 auto;
+  border: 3px solid $gray-500;
+}
+
+.profile-username {
+  @include font-size(21px);
+  margin-top: 5px;
+}
+
+.post {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color: #666;
+  border-bottom: 1px solid $gray-500;
+
+  &:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .user-block {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .row {
+    width: 100%;
+  }
+}

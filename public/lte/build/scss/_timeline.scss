@@ -1,0 +1,130 @@
+//
+// Component: Timeline
+//
+
+.timeline {
+  position: relative;
+  padding: 0;
+  margin: 0 0 45px;
+  // The line
+
+  &::before {
+    @include border-radius($border-radius);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 31px;
+    width: 4px;
+    margin: 0;
+    content: "";
+    background: $gray-300;
+  }
+  // Element
+  > div {
+    &::before,
+    &::after {
+      display: table;
+      content: "";
+    }
+
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    // The content
+    > .timeline-item {
+      @include box-shadow($card-shadow);
+      @include border-radius($border-radius);
+      position: relative;
+      padding: 0;
+      margin-top: 0;
+      margin-right: 15px;
+      margin-left: 60px;
+      color: $gray-700;
+      background: $white;
+      // The time and header
+      > .time {
+        @include font-size(12px);
+        float: right;
+        padding: 10px;
+        color: #999;
+      }
+      // Header
+      > .timeline-header {
+        @include font-size(16px);
+        padding: 10px;
+        margin: 0;
+        line-height: 1.1;
+        color: $gray-700;
+        border-bottom: 1px solid $card-border-color;
+        // Link in header
+        > a {
+          font-weight: 600;
+        }
+      }
+      // Item body and footer
+      > .timeline-body,
+      > .timeline-footer {
+        padding: 10px;
+      }
+
+      > .timeline-body {
+        > img {
+          margin: 10px;
+        }
+        > dl,
+        > ol,
+        > ul {
+          margin: 0;
+        }
+      }
+
+      > .timeline-footer {
+        > a {
+          color: $white;
+        }
+      }
+    }
+    // The icons at line
+    > .fa,
+    > .fas,
+    > .far,
+    > .fab,
+    > .glyphicon,
+    > .ion {
+      @include border-radius(50%);
+      @include font-size(15px);
+      position: absolute;
+      top: 0;
+      left: 18px;
+      width: 30px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: $gray-500;
+    }
+  }
+  // Time label
+  > .time-label {
+    > span {
+      @include border-radius(4px);
+      display: inline-block;
+      padding: 5px;
+      font-weight: 600;
+      background-color: $white;
+    }
+  }
+}
+
+.timeline-inverse {
+  > div {
+    > .timeline-item {
+      @include box-shadow(none);
+      background: $gray-100;
+      border: 1px solid $gray-300;
+
+      > .timeline-header {
+        border-bottom-color: $gray-300;
+      }
+    }
+  }
+}

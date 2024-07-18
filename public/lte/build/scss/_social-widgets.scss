@@ -1,0 +1,93 @@
+//
+// Component: Social Widgets
+//
+
+//General widget style
+.card-widget {
+  position: relative;
+  border: 0;
+}
+
+//User Widget Style 1
+.widget-user {
+
+  //User name container
+  .widget-user-header {
+    @if $enable-rounded {
+      @include border-top-radius($border-radius);
+    }
+
+    height: 135px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  //User name
+  .widget-user-username {
+    @include font-size(25px);
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: 300;
+    text-shadow: 0 1px 1px rgba($black, .2);
+  }
+
+  //User single line description
+  .widget-user-desc {
+    margin-top: 0;
+  }
+
+  //User image container
+  .widget-user-image {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    margin-left: -45px;
+
+    > img {
+      width: 90px;
+      height: auto;
+      border: 3px solid $white;
+    }
+  }
+
+  .card-footer {
+    padding-top: 50px;
+  }
+}
+
+//User Widget Style 2
+.widget-user-2 {
+
+  //User name container
+  .widget-user-header {
+    @include border-top-radius($border-radius);
+    padding: 1rem;
+  }
+
+  //User name
+  .widget-user-username {
+    @include font-size(25px);
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 300;
+  }
+
+  //User single line description
+  .widget-user-desc {
+    margin-top: 0;
+  }
+
+  .widget-user-username,
+  .widget-user-desc {
+    margin-left: 75px;
+  }
+
+  //User image container
+  .widget-user-image {
+    > img {
+      float: left;
+      width: 65px;
+      height: auto;
+    }
+  }
+}
