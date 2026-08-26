@@ -147,7 +147,6 @@
                     </div>
                 @endforeach
                 <!-- End Column 2 -->
-
             </div>
         </div>
     </div>
